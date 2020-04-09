@@ -2,10 +2,11 @@ const fs = require('fs')
 const got = require('got')
 const WebSocket = require('ws')
 
-const token = require('./token')
+const token = require('./token').bot
 
 const userBlackList = [
-  'UHDQR2VT3'
+  'UHDQR2VT3',
+  'UHJ5JVBPX'
 ]
 
 ;
@@ -52,3 +53,6 @@ const userBlackList = [
     console.log('wss Closed')
   })
 })()
+
+setTimeout(process.exit, 1000 * 60 * 60 * 18)
+// auto restart every 18 hours
